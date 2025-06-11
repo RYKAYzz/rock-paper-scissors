@@ -22,3 +22,22 @@ let computerScore = 0;
 
 //Create round function
 //Hold two parameters for human and computer
+function playRound(humanChoice, computerChoice) {
+  console.log("User:", humanChoice);
+  console.log("Bot:", computerChoice);
+  if (humanChoice === computerChoice) return "Draw";
+
+  if (
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    return "You win!";
+  } else {
+    return "You lose!";
+  }
+}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
