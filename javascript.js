@@ -25,17 +25,22 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
   console.log("User:", humanChoice);
   console.log("Bot:", computerChoice);
-  if (humanChoice === computerChoice) return "Draw";
+  if (humanChoice === computerChoice) return "That's a draw";
 
-  if (
-    (humanChoice === "paper" && computerChoice === "rock") ||
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "scissors" && computerChoice === "paper")
-  ) {
-    return "You win!";
-  } else {
-    return "You lose!";
-  }
+  if (humanChoice === "rock" && computerChoice === "scissors")
+    return "You win, rock beats scissors";
+  if (humanChoice === "rock" && computerChoice === "paper")
+    return "You lose! Paper beats rock";
+
+  if (humanChoice === "scissors" && computerChoice === "paper")
+    return "You win, scissors beats paper";
+  if (humanChoice === "scissors" && computerChoice === "rock")
+    return "You lose! Rock beats scissors";
+
+  if (humanChoice === "paper" && computerChoice === "rock")
+    return "You win, paper beats rock";
+  if (humanChoice === "paper" && computerChoice === "scissors")
+    return "You lose! Scissors beats paper";
 }
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
