@@ -29,6 +29,9 @@ buttons.forEach((button) =>
     playRound(choice);
   })
 );
+//assign initial score
+let playerScore = 0;
+let computerScore = 0;
 //playRound function to check playersSelection
 function playRound(playersSelection) {
   let playerChoice = playersSelection;
@@ -41,4 +44,5 @@ function playRound(playersSelection) {
     (playerChoice == "scissors" && computerSelection == "paper")
   )
     return "You won";
+  else return "You lost";
 }
